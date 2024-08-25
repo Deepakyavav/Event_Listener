@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        .main_container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            width: 200px;
+            margin: 10px;
+            border: 1px solid black;
+            background-color: #fff;
+            border-radius: 5%;
+        }
+        .clickMe {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            width: 100%;
+            margin: 10px;
+            border: 1px solid black;
+            background-color: #fff;
+            border-radius: 5%;
+        }
+    </style>
+    <title>Onclick</title>
+  </head>
+  <body>
+    <section class="main_container">
+        <div id="box1" class="box">
+            <p class="clickMe">Click me 👇</p>
+        </div>
+        <div id="box2" class="box">
+            <p class="clickMe">Click me twice 👇👇</p>
+        </div>
+        <div id="box3" class="box">
+            <p class="clickMe">Restricted Area 🙅</p>
+        </div>
+        <div id="box4" class="box">
+            <p class="clickMe">Safe Zone 😃</p>
+        </div>
+        <div>
+            <h1 id="display2" class="box"></h1>
+            <input id="input-box" type="text" placeholder="Type something..." />
+        </div>
+        <div id="container" class="box">
+            <div id="display">Press any key :)</div>
+        </div> 
+    </section> 
+    <div class="result">
+        <h1 id="result1">Result</h1>
+    </div>  
+  </body>
+  <script>
+        let box1 = document.getElementById("box1");
+        let result = document.getElementById("result1");
+        // add a click event listener to the element
+        box1.addEventListener("click", function () {
+            result.textContent = "You clicked the box";
+        });
+        let box2 = document.getElementById("box2");
+        // add a double click event listener to the element
+        box2.addEventListener("dblclick", function () {
+            result.textContent = "You double clicked the box";
+        });
+        let box3 = document.getElementById("box3");
+        // add a mouse enter event listener to the element
+        box3.addEventListener("mouseenter", function () {
+            result.textContent = "You entered the box";
+        }); 
+        let box4 = document.getElementById("box4");
+        // add a mouse leave event listener to the element
+        box4.addEventListener("mouseleave", function () {
+            result.textContent = "You are in blank box";
+        });
+        let inputBox = document.getElementById("input-box");
+        // add a keydown event listener to the element
+        inputBox.addEventListener("keydown", function () {
+            result.textContent = "You pressed a key";
+        });
+        let container = document.getElementById("container");
+        let display = document.getElementById("display");
+
+        // adding a keydown event listener to the document
+        document.addEventListener("keydown", function (e) {
+            display.style.color = "red";
+            display.innerText = e.key + " is keyDown";
+        });
+
+        // adding a keyup event listener to the document
+        document.addEventListener("keyup", function (e) {
+            display.style.color = "green";
+            display.innerText = e.key + " is keyUp";
+        });
+
+  </script>
+</html>

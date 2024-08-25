@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter App</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            width: 500px;
+            border: 1px solid black;
+            background-color: violet;
+            border-radius: 5%;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 10px;
+            height: 50px;
+            background-color: antiquewhite;
+            border-radius: 5%;
+        }
+        #value{
+            height: 50px;
+            font-size: 30px;
+            margin: 10px;
+            height: 50px;
+            padding: 10px 20px;
+            border: 1px solid black;
+            background-color: green;
+            border-radius: 25%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Counter App</h1>
+        <div>
+            <button id="increase">Increase</button>
+            <span id="value">0</span>
+            <button id="decrease">Decrease</button>
+        </div>
+        <button id="Reset">Reset Value</button>
+    </div>
+
+
+    <script>
+        let value = document.getElementById('value');
+        let increase = document.getElementById('increase');
+        let decrease = document.getElementById('decrease');
+        let reset = document.getElementById('Reset');
+
+        let counter = 0;
+        value.textContent = counter;
+
+        increase.addEventListener('click', ()=>{
+            counter++;
+            value.textContent = counter;
+        });
+
+        decrease.addEventListener('click', ()=>{
+            counter--;
+            value.textContent = counter;
+        });
+
+        reset.addEventListener('click', ()=>{
+            counter = 0;
+            value.textContent = counter;
+        });
+    </script>
+</body>
+</html>
